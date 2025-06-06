@@ -30,14 +30,14 @@ pip install editdistance
 ```
 pip install -r requirements.txt
 ```
-- For the baseline, use [this](https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-dutch) Huggingface model to make sure to model runs. The script is added to this repo, with the name <script_name>
+- For the baseline, use [this](https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-dutch) Huggingface model to make sure to model runs. The script is added to this repo, with the name [baseline.py](scripts/baseline.py). 
 
 <a name = "dataset_preparation" ></a>
 ### Dataset Preparation
 - Datasets need to be in **.txt** format and the audio files need to be in **.wav** format. 
 - The transcription files need to be tab separated with the first column of each row the name of the audio file and the transcription of the wav. The files need to be samples at 16 kHz.
-- In <file_name> I created .tsv files in a manifest directory with the amount of tokens in the sound file. It creates train.tsv and valid.tsv. Make sure to create separate english and dutch train.tsv files.
-- Then, create parallel audio and label files. To generate label files for the fine-tuning and validation dataset run the following 2 commands with this <script_name> script.
+- In [create_manifest_from_txt.py](scripts/create_manifest_from_txt.py) .tsv files are created in a manifest directory with the amount of tokens in the sound file. It creates train.tsv and valid.tsv. Make sure to create separate english and dutch train.tsv files.
+- Then, create parallel audio and label files. To generate label files for the fine-tuning and validation dataset run the following 2 commands with this [generate_labels.py](scripts/generate_labels.py) script.
 ```
 python scripts/generate_labels.py \\ 
 --transcriptions-file /PATH/TO/TRAIN_TSV \\
@@ -49,11 +49,11 @@ python scripts/generate_labels.py \\
 --output-dir /PATH/TO/MANIFEST_DIRECTORY \\
 --output-name valid
 ```
-- Create a dict file with this <script_name> python script. Make sure to create 2 separate .dict files for both English and Dutch. Copy this dict into the manifest directory.
+- Create a dict file with this [create_dict.py](scripts/create_dict.py) python script. Make sure to create 2 separate .dict files for both English and Dutch. Copy this dict into the manifest directory.
 
 <a name = "finetuning" ></a>
 ### Fine-tuning
-- Use the .yaml script from this repo.
+- Use the .yaml script from this repo. This can be found in the [config](config) folder. 
 - Run the following command:
 ```
 fairseq-hydra-train \\
@@ -69,7 +69,7 @@ dataset.valid_subset = valid \\
 
 <a name = "inference" ></a>
 ### Inference
-- For testing the model with the testing dataset, execute the following command:
+- For testing the model with the testing dataset, execute the command below using the [inference_beam_search.py](scripts/inference_beam_search.py)
 - Make sure that this needs to be done two times, 1 for English typical dataset and Dutch dysarthric dataset. Also, keep in mind naming the files after the language, which makes them distinctive. 
 ```
 python scripts/inference_beam_search.py \\
