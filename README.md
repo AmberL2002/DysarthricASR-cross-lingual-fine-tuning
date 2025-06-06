@@ -8,7 +8,6 @@ The thesis can be downloaded from [here](https://campus-fryslan.studenttheses.ub
 3. [Dataset Preparation](#dataset_preparation)
 4. [Fine-tuning](#finetuning)
 5. [Inference](#inference)
-6. [Logs and Visualization](#logs)
 
 <a name = "feature" ></a>
 ### Available features
@@ -83,6 +82,3 @@ python scripts/inference_beam_search.py \\
 	--beam_width 50
 ```
 
-<a name = "logs" ></a>
-### Logs and Visualization
-HIer gebleven 
