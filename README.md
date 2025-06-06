@@ -30,7 +30,7 @@ pip install editdistance
 ```
 pip install -r requirements.txt
 ```
-- For the baseline, use [this](https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-dutch) Huggingface model to make sure to model runs. The script is added to this repo.
+- For the baseline, use [this](https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-dutch) Huggingface model to make sure to model runs. The script is added to this repo, with the name <script_name>
 
 <a name = "dataset_preparation" ></a>
 ### Dataset Preparation
