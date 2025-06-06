@@ -21,6 +21,6 @@ def create_tsv(txt_file, audio_dir, out_tsv):
 if __name__ == "__main__":
     os.makedirs("manifest", exist_ok=True)
     # Create valid.tsv from evaluation.txt and evaluation_wavs/
-    #create_tsv("evaluation.txt", "evaluation_wavs", "manifest/valid.tsv")
+    #create_tsv("eval_wavs/eval_wavs.trans.txt", "evaluation_wavs", "manifest/valid.tsv")
     # Create train.tsv from train_nl.txt and train_nl_wavs/
-    create_tsv("eval_wavs/eval_wavs.trans.txt", "eval_wavs", "manifest/valid.tsv")
+    create_tsv("train_nl.txt", "train_nl_wavs", "manifest/valid.tsv")
