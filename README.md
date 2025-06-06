@@ -19,6 +19,7 @@ The thesis can be downloaded from [here](https://campus-fryslan.studenttheses.ub
 ### Installation
 - Make sure to use a Virtual environment.
 - module load Python/3.10.8-GCCcore-12.2.0
+- Download the XLSR-53 checkpoint from [this](https://github.com/facebookresearch/fairseq/tree/main/examples/wav2vec#wav2vec-20)  website. 
 ```
 cd fairseq
 pip install --editable ./
