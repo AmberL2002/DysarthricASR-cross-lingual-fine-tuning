@@ -62,7 +62,7 @@ task.data = /PATH/TO/MANIFEST_DIRECTORY \\
 model.w2v_path = /PATH/TO/PRETRAINED_MODEL_TO_FINETUNE
 checkpoint.restore_file = /PATH/TO/CHECKPOINT_TO_START_FINETUNING
 distributed_training.distributed_world_size=1 \\
-optimization.update_freq='[24]' \\
+optimization.update_freq='[1]' \\
 dataset.valid_subset = valid \\
 --config-dir config \\
 --config-name finetune_config.yaml
