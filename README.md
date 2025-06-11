@@ -8,6 +8,7 @@ The thesis can be downloaded from [here](https://campus-fryslan.studenttheses.ub
 3. [Dataset Preparation](#dataset_preparation)
 4. [Fine-tuning](#finetuning)
 5. [Inference](#inference)
+6. [Logs](#logs)
 
 <a name = "feature" ></a>
 ### Available features
@@ -81,4 +82,27 @@ python scripts/inference_beam_search.py \\
 	--out_name NAME_OF_THE_OUTPUT_FILE \\
 	--beam_width 50
 ```
+<a name = "logs" ></a>
+### Logs
+I ran Logs in Google Colab, since in that worked better for me. 
+```
+!pip install tensorboardcolab
+```
 
+```
+from google.colab import files
+uploaded = files.upload()
+```
+Run the script for every log file seperately. 
+```
+import os
+import shutil
+
+os.makedirs("logs/run1", exist_ok=True)
+shutil.move("/content/combined.out.tfevents.1749479237.a100gpu6", "/content/logs/run1")
+```
+
+```
+%load_ext tensorboard
+%tensorboard --logdir logs/
+```
