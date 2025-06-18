@@ -61,6 +61,6 @@ model:
   mask_channel_length: 32
   layerdrop: 0.0
   activation_dropout: 0.0
-  feature_grad_mult: 1.0
+  feature_grad_mult: 0.0
   freeze_finetune_updates: 0  
   
