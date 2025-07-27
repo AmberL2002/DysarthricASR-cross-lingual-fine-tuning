@@ -1,6 +1,6 @@
 # Dysarthric ASR cross-lingual fine-tuning
 For my Master's Thesis, I conducted a cross-lingual experiment to improve dysarthric ASR. Therefore I used for fine-tuning typical Dutch speech from Common Voice 13.0 delta. For fine-tuning with English dyasarthric speech, I used TORGO. For testing, I used the dataset COPAS together with Domotica, where only for COPAS it is necessary to ask for a license. 
-The thesis can be downloaded from [here](https://campus-fryslan.studenttheses.ub.rug.nl/356/). #needs the correct link when thesis has been uploaded!!
+The thesis can be downloaded from [here](https://campus-fryslan.studenttheses.ub.rug.nl/659/).
 
 ### Table of Contents
 1. [Available Features](#feature)
